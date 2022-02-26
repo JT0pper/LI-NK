@@ -279,7 +279,7 @@ body, .quote-input {
   border-left: transparent;
   border-right: transparent; */
   outline: none;
-  width: 100%;
+  width: 25%;
   height: 5rem;
   margin: 5px;
   resize: none;
@@ -290,4 +290,13 @@ body, .quote-input {
   white-space: nowrap;
   text-overflow: ellipsis;
   color:#f1ecce;
+}
+
+.modalBoxContainer {
+  margin-bottom: 50px;
+}
+
+.modalBoxContainer * {
+  margin-left: auto;
+  margin-right: auto;
 }
