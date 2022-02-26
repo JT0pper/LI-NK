@@ -1,13 +1,13 @@
 //const quoteDisplayElement = document.getElementById('quoteDisplay')
-const quoteDisplayElement = document.getElementById('quoteDisplay')
-const quoteInputElement = document.getElementById('quoteInput')
-const UserInput = document.querySelectorAll('quote-input')
-const quoteStartElement = document.getElementById('quoteStart')
-const words = ['Super', 'Bowl', 'Cut', 'Back', 'Pack', 'Mule']
+const quoteDisplayElement = document.getElementById('quoteDisplay');
+const quoteInputElement = document.getElementById('quoteInput');
+const UserInput = document.querySelectorAll('quote-input');
+const quoteStartElement = document.getElementById('quoteStart');
+const words = ['Super', 'Bowl', 'Cut', 'Back', 'Pack', 'Mule'];
 const myNodelist = document.querySelectorAll("textarea");
-const Rules = document.getElementById('rules')
-const Hint = document.getElementById('hint')
-var currentGuess = 0
+const Rules = document.getElementById('rules');
+const Hint = document.getElementById('hint');
+var currentGuess = 1;
 
 
 
@@ -15,7 +15,7 @@ var currentGuess = 0
 
 
 async function renderNewQuote() {
-  quoteStartElement.innerHTML = words[0]
+  quoteStartElement.innerHTML = words[0];
 }
 
 
@@ -26,11 +26,11 @@ for (let i = 0; i < myNodelist.length; i++) {
     if (e.key === 'Enter') {
       e.preventDefault();
     if (myNodelist[i].value.toLowerCase() === words[i+1].toLowerCase()){
-      checkColor(i,4) 
-      currentGuess++
+      checkColor(i,4);
+      currentGuess++;
     }
     else{
-      checkColor(i,3)
+      checkColor(i,3);
     }
     
     }
@@ -51,10 +51,12 @@ function checkColor(i,j) {
   
 
 function giveHint() {
-    if (myNodelist[currentGuess].value !== null) {
-      let hint = words[currentGuess+1].charAt(0)
-      myNodelist[currentGuess].innerHTML = hint
+    if (myNodelist[currentGuess - 1].value !== null) {
+      let hint = words[currentGuess].charAt(0)
+      myNodelist[currentGuess - 1].innerHTML = hint
   }
+
+
 }
 
 // giveHint()
