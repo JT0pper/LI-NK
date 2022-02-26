@@ -8,11 +8,23 @@ const myNodelist = document.querySelectorAll("textarea");
 const Rules = document.getElementById('rules');
 const Hint = document.getElementById('hint');
 var currentGuess = 1;
+var rulesModal = document.getElementById("rulesModal");
+var rulesBtn = document.getElementById("rulesButton");
+var span = document.getElementsByClassName("close")[0];
 
+rulesBtn.onclick=function(){
+  rulesModal.style.display="block"
+}
 
+span.onclick = function() {
+  rulesModal.style.display = "none";
+}
 
-
-
+window.onclick = function(event) {
+  if (event.target == rulesModal) {
+    rulesModal.style.display = "none";
+  }
+}
 
 async function renderNewQuote() {
   quoteStartElement.innerHTML = words[0];
