@@ -51,12 +51,8 @@ function checkColor(i,j) {
   
 
 function giveHint() {
-    if (myNodelist[currentGuess - 1].value !== null) {
-      let hint = words[currentGuess].charAt(0)
-      myNodelist[currentGuess - 1].innerHTML = hint
-  }
-
-
+      let hint = words[currentGuess].charAt(0);
+      myNodelist[currentGuess - 1].value = hint;
 }
 
 // giveHint()
